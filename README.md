@@ -1,6 +1,6 @@
 # Enginyeria del Software - 2022
 1. [Yeray Cordero, NIU: 1599053, Github user: yeray142](https://github.com/yeray142)
-2. [Marc Garcia, NIU: 1598865, Github user:]()
+2. [Marc Garcia, NIU: 1598865, Github user: MarcGM04](https://github.com/MarcGM04)
 3. [Adrian Vargas, NIU: 1606868, Github user: ]()
 
 ## Introducció
