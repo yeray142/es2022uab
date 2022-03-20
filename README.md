@@ -41,4 +41,4 @@ Aquest document conté tota la següent informació:
 * Comentaris addicionals.
 
 #### Diagrama de casos d'ús
-S'identifiquen els acotrs, quins son els casos d'ús i quines relacions hi ha entre els actors i els casos d'ús.
+S'identifiquen els actors, quins son els casos d'ús i quines relacions hi ha entre els actors i els casos d'ús.
