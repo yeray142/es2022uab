@@ -1,7 +1,7 @@
 # Enginyeria del Software - 2022
 ### Grup
-Grup de matrícula: 411
-Subrgrup: 07
+* Grup de matrícula: 411
+* Subrgrup: 07
 
 ### Integrants
 1. [Yeray Cordero, NIU: 1599053, Github user: yeray142](https://github.com/yeray142)
