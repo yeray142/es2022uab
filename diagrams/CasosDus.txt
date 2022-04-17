@@ -1,0 +1,59 @@
+@startuml
+left to right direction
+
+' ***** Actors
+actor Usuari
+
+actor Client
+actor Botiguer
+actor Transportista
+actor SysExternGoogleMaps
+
+
+' ***** Cas d'ús accés a pestanyes:
+Client --> (Accés a pestanyes)
+(Accés a pestanyes) <|-- (Registre comandes)
+(Accés a pestanyes) <|-- (Presentació ofertes)
+(Presentació ofertes) <-- (Botigues pròximes) : <<extend>>
+(Accés a pestanyes) <|-- (Afegir a la cistella)
+(Accés a pestanyes) <|-- (Gestió de lliuraments)
+(Accés a pestanyes) <|-- (Pestanya reemborsaments)
+(Pestanya reemborsaments) <-- (Procés d'abonament) : <<extend>>
+
+
+' ***** Cas d'ús realitzar comandes:
+Client --> (Realitzar comanda)
+(Realitzar comanda) --> (Mètode pagament) : <<include>>
+(Realitzar comanda) --> (Cistella compra) : <<include>>
+
+
+' ***** Cas d'ús tria del tipus de lliurament:
+Botiguer --> (Tipus de lliurament) 
+(Tipus de lliurament) <|-- (Lliurament Propi)
+(Tipus de lliurament) <|-- (Lliurament amb Transportista)
+Botiguer --> (Mètode pagament) 
+(Mètode pagament)  <|-- (En efectiu)
+(Mètode pagament)  <|-- (Paypal)
+(Mètode pagament)  <|-- (Targeta de crèdit)
+Botiguer --> (Sol·licitud de reclamació)
+(Sol·licitud de reclamació) <-- (Procés de protecció dels venedors) : <<extend>>
+
+
+' ***** Cas d'ús rebre pagament transportista:
+Transportista --> (Rebre pagament via APP)
+(Rebre pagament via APP) <-- (Pagaments de les botigues pel transport):<<extend>>
+
+
+' ***** Cas d'ús accés a pestanyes:
+Usuari <|-- Client
+Usuari <|-- Transportista
+Usuari <|-- Botiguer
+
+Usuari --> (Fer seguiment d'enviaments)
+Usuari --> (Pestanya usuari)
+(Pestanya usuari) <|-- (Donar-se de baixa)
+(Pestanya usuari) <|-- (Modificar dades)
+
+SysExternGoogleMaps --> (Fer seguiment d'enviaments)
+
+@enduml
