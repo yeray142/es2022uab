@@ -1,0 +1,64 @@
+@startuml
+
+class PerfUsuari {
+id_usuari
+nom
+email
+numero_telèfon
+}
+
+class PerfClient {
+id_client
+n_comandes
+}
+
+class PerfBotiguer {
+id_botiguer
+ubicació_botiga
+}
+
+class PerfTransportista {
+id_transportista
+}
+
+PerfUsuari <|-- PerfClient
+PerfUsuari <|-- PerfBotiguer
+PerfUsuari <|-- PerfTransportista
+
+class Comanda {
+id_comanda
+id_client
+id_botiga
+preu_total
+estat_comanda
+comissió
+}
+
+PerfClient "1..1" -- "1..*" Comanda
+PerfBotiguer "1..1" -- "1..*" Comanda
+PerfTransportista "0..1" -- "1..*" Comanda
+
+class Pagament {
+mètode_pagament
+}
+
+Pagament "1..1" -- "1..1" Comanda
+
+class Producte {
+id_producte
+quantitat
+preu
+}
+
+Producte "1..*" -- "1..1" Comanda
+
+class Trajecte {
+quilometres
+càrrec_transport
+origen
+destinació
+}
+
+Trajecte "1..1" -- "1..1" Comanda
+
+@enduml
