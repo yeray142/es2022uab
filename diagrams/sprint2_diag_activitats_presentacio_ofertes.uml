@@ -1,0 +1,16 @@
+@startuml
+
+|Client|
+start
+:Indica que vol ofertes;
+repeat
+  |#AntiqueWhite|Gestor Comandes|
+  :Oferir botigues pròximes;
+  |Client|
+  :Tria una botiga;
+  |Client|
+repeat while (vol canviar de botiga?) is (yes)
+->no;
+stop
+
+@enduml
