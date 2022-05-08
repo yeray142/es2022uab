@@ -1,0 +1,17 @@
+@startuml
+
+|Client|
+start
+repeat
+  :Escull producte;
+  :Indica quantitat producte;
+  |#AntiqueWhite|Gestor Comandes|
+  :Afegir comanda a la cistella;
+  |Proveidor Extern|
+  :Recomanar productes;
+  |Client|
+repeat while (més productes?) is (yes)
+->no;
+stop
+
+@enduml
