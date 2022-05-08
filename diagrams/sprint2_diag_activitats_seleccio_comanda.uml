@@ -1,0 +1,17 @@
+@startuml
+
+|Client|
+start
+:Selecciona una oferta;
+|#AntiqueWhite|Gestor Comandes|
+:Comprovar màxim comandess;
+if (no hem arribat al màxim) then (yes)
+  :Enviar missatge al botiguer;
+  :Efectuar enviament comanda;
+else (no)
+  :Enviar missatge d'error al client;
+endif
+|Client|
+stop
+
+@enduml
