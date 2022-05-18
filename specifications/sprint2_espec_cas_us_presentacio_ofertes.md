@@ -4,47 +4,66 @@
 Presentar ofertes
 
 #### Version
-1.0.0
+1.0.1
 
 #### Date
-08/05/2022
+18/05/2022
 
 #### Description
 La presentació d’ofertes és notificar a la persona de quines tendes properes li poden servir el que demana. Aquesta oferta llistarà els productes que se li serviran, indicant quantitat, preu, etc.; així com el dia d’entrega i hora aproximada. I també el preu total, incloent els càrrecs addicionals com pot ser el transport.
 
 #### Actors
-Client
+Client, Botiguer, Transportista, SysExternGoogleMaps
 
 #### Preconditions
 1. L'usuari ha d'estar registrat com a client.
 2. L'usuari ha d'haver sol·licitat alguna comanda.
 
 #### Main Pipeline :
-1. L'usuari indica que vol ofertes per la seva comanda.
+1. Preguntar a les botigues la quantitat i preu dels productes.
 
-2. **Include CU** Oferir botigues pròximes
+2. Consultar les ofertes de les botigues.
 
-3. L'usuari tria una de les botigues.
+3. Si la botiga no pot fer tota la comanda:
 
-4. Si es vol canviar de botiga:
-    
-    4.1 Tornar a **2**.
+    3.1 Tornar a **1**.
 
-5. Mostrar missatge d'oferta desada correctament.
+4. Si la botiga utilitza l'entrega pròpia:
+
+    4.1 Contactar amb un transportista.
+
+6. Calcular trajecte amb l'API de Google Maps.
+
+7. Afegir preu del transport a la oferta final.
+
+8. Afegir oferta a la llista d'ofertes.
+
+9. Si queden més botigues per revisar:
+
+    9.1 Tornar a **1**.
+
+10. Mostrar llista d'ofertes al client.
 
 #### Alternative Paths:
+
+4.2 Si el transportista no està disponible:
+
+    4.2.1 Tornar a **4**.
 
 ---
 #### Exception Paths:
 
-<u>No hi ha botigues pròximes</u>
+<u>No hi ha botigues pròximes que puguin oferir la comanda</u>
 Mostrar missatge d'error: "No s'han trobat botigues pròximes".
 
-<u>L'usuari no tria cap botiga</u>
-Mostrar missatge d'error: "No s'ha triat cap botiga".
+<u>No hi ha transportistes a la zona</u>
+Mostrar missatge d'error: "No s'han trobat transportistes disponibles".
+
+<u>Si l'API de Google Maps no està disponible</u>
+Mostrar missatge d'error: "Google Maps no respon".
 
 #### Post-conditions
-1. Hi ha d'haver una botiga escullida per poder seleccionar comanda i enviar.
+1. Hi ha d'haver una botiga pròximes i ofertes disponibles per poder seleccionar comanda i enviar.
 
 #### Comments
 Cap comentari addicional.
