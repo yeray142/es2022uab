@@ -1,17 +1,30 @@
 @startuml
-
 |Client|
 start
-:Selecciona una oferta;
-|#AntiqueWhite|Gestor Comandes|
-:Comprovar màxim comandess;
-if (no hem arribat al màxim) then (yes)
-  :Enviar missatge al botiguer;
-  :Efectuar enviament comanda;
-else (no)
-  :Enviar missatge d'error al client;
-endif
-|Client|
-stop
 
+:Tria una oferta;
+:Tria un mètode de pagament;
+
+if (métode de pagament?) then (Paypal)
+  |#AntiqueWhite|SysExternPaypal|
+  :Fer pagament;
+else (Tarjeta bancària)
+  |SysExternEntitatBancaria|
+  :Fer pagament;
+endif
+
+|Client|
+fork
+  :Generar comanda;
+fork again
+  |#AntiqueWhite|Botiguer|
+  :Avisar botiguer;
+  |Client|
+fork again
+  |Transportista|
+  :Canvia disponibilitat;
+  |Client|
+end fork
+
+stop
 @enduml
