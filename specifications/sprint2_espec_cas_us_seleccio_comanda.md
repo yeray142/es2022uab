@@ -13,7 +13,7 @@ Seleccionar comanda i enviar
 Finalment la selecció de la comanda i enviament succeeix quan l’usuari vol acceptar una de les ofertes rebudes. Llavors es genera una comanda en ferm i el botiguer rep totes les dades necessàries per a servir-la.
 
 #### Actors
-Client, SysExternPaypal, SysExternEntitatBancaria, Botiguer, Transporista
+Client, SysExternPaypal, SysExternEntitatBancaria, Botiguer, Transportista
 
 #### Preconditions
 1. L'usuari ha d'estar registrat com a client.
