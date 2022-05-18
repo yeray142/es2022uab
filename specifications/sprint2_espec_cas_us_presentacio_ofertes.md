@@ -32,17 +32,17 @@ Client, Botiguer, Transportista, SysExternGoogleMaps
 
     4.1 Contactar amb un transportista.
 
-6. Calcular trajecte amb l'API de Google Maps.
+    4.2 Calcular trajecte amb l'API de Google Maps.
 
-7. Afegir preu del transport a la oferta final.
+    4.3 Afegir preu del transport a la oferta final.
 
-8. Afegir oferta a la llista d'ofertes.
+5. Afegir oferta a la llista d'ofertes.
 
-9. Si queden més botigues per revisar:
+6. Si queden més botigues per revisar:
 
-    9.1 Tornar a **1**.
+    6.1 Tornar a **1**.
 
-10. Mostrar llista d'ofertes al client.
+7. Mostrar llista d'ofertes al client.
 
 #### Alternative Paths:
 
