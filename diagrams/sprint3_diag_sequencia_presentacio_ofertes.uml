@@ -1,0 +1,33 @@
+@startuml
+
+actor Client
+actor SysExternGoogleMaps
+boundary ClasseInterf
+control ClasseControl
+entity PerfBotiguer
+entity PerfTransportista
+entity Oferta
+
+Client -> ClasseInterf : DemanarOfertes()
+ClasseInterf -> ClasseControl : DemanarOfertes()
+loop queden botigues per revisar
+loop no hi ha botiga
+   ClasseControl -> PerfBotiguer : PreguntarStock()
+   ClasseControl -> PerfBotiguer : ConsultarOfertes()
+end loop
+
+ClasseControl -> Oferta : crearOferta(preu, descomptes)
+
+alt botiga usa entrega pròpia
+   alt no hi ha transportista
+      ClasseControl -> PerfTransportista : consultarDisponibilitat()
+   end
+   ClasseControl -> ClasseInterf : calcularTrajecte()
+   ClasseInterf -> SysExternGoogleMaps : calcularTrajecte()
+   ClasseControl -> Oferta : afegirPreuTransport(preu)
+end
+end
+
+ClasseInterf -> Client : mostrarLlistaOfertes()
+
+@enduml

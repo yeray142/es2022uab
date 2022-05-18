@@ -1,0 +1,28 @@
+@startuml
+' ***** Declaració d'actors i objectes. 
+' ***** Els objectes poden ser comunicació (boundary), control o entity
+actor Client
+actor ProveidorExtern
+boundary ClasseInterf
+control ClasseControl
+entity PerfBotiguer
+entity PerfProveidorExtern
+entity Cistella
+
+loop client vol afegir productes
+  loop producte no existeix
+    Client -> ClasseInterf : afegirProducte(p)
+    ClasseInterf -> ClasseControl : afegirProducte(p)
+    ClasseControl -> PerfBotiguer : comprovaDisponibilitat(p)
+    alt producte existeix
+      ClasseControl -> Cistella : afegirProducte(p)
+    else producte no existeix
+      ClasseInterf -> Client : mostrarError()
+    end
+  end
+  
+  ProveidorExtern -> ClasseInterf : afegirBannerPublicitat(banner)
+  ClasseInterf -> Client : afegirBannerPublicitat(banner)
+end
+ClasseInterf -> Client : mostrarMissatgeComandaSolicitada()
+@enduml
