@@ -1,0 +1,33 @@
+@startuml
+
+actor Client
+actor SysExternPaypal
+actor SysExternEntitatBancaria
+actor Botiguer
+boundary ClasseInterf
+control ClasseControl
+entity ComandaFerma
+entity PerfTransportista
+
+Client -> ClasseInterf : triaOferta(o)
+Client -> ClasseInterf : triaMetodePagament(mp)
+
+ClasseInterf -> ClasseControl : pagarOferta(o, mp)
+
+alt mp == Paypal
+   ClasseControl -> ClasseInterf : redireccionar(Paypal)
+   ClasseInterf -> SysExternPaypal : redireccionar()
+else mp == Tarjeta bancària
+   ClasseControl -> ClasseInterf : redireccionar(entitatBancaria)
+   ClasseInterf -> SysExternEntitatBancaria : redireccionar()
+end
+
+ClasseControl -> ComandaFerma : generarComanda(o)
+ClasseControl -> ClasseInterf : avisarBotiguer()
+ClasseInterf -> Botiguer : avisarComanda()
+
+ClasseControl -> PerfTransportista : canviaDisponibilitat(hora, dia)
+ClasseControl -> ClasseInterf : mostrarMissatgeComandaFeta()
+ClasseInterf -> Client : mostrarMissatgeComandaFeta()
+
+@enduml
