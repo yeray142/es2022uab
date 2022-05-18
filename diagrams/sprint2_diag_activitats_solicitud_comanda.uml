@@ -3,15 +3,24 @@
 |Client|
 start
 repeat
-  :Escull producte;
-  :Indica quantitat producte;
-  |#AntiqueWhite|Gestor Comandes|
-  :Afegir comanda a la cistella;
+
+  repeat
+    :Triar producte;
+    |#AntiqueWhite|Botiguer|
+    :Comprovar disponibilitat;
+    |Client|
+  repeat while (producte existeix?) is (no)
+  ->si;
+  
+  :Afegir producte a la cistella;
+  
   |Proveidor Extern|
-  :Recomanar productes;
+  :Afegir banner de publicitat;
+  
   |Client|
-repeat while (més productes?) is (yes)
+repeat while (vol més productes?) is (si)
 ->no;
+
 stop
 
 @enduml
