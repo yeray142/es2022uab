@@ -4,35 +4,39 @@
 Sol·licitar comanda
 
 #### Version
-1.0.0
+1.0.1
 
 #### Date
-08/05/2022
+18/05/2022
 
 #### Description
 Sol·licitar una comanda és demanar al sistema a través d’una aplicació amigable una llista de queviures que necessita la persona. Aquí a diferència d’una botiga habitual per Internet, l’usuari no ha de cercar res, sinó indicar què vol o necessita.
 Les comandes podran contenir un o més productes, amb quantitats diferents per a cada producte. El client haurà d’especificar la quantitat (encara que pot ser d’una forma no concreta) en la seva petició; però totes les comandes contindran valors específics concrets de cada producte.
 
 #### Actors
-Client
+Client, Botiguer, ProveidorExtern
 
 #### Preconditions
 1. L'usuari ha d'estar registrat com a client.
 
 #### Main Pipeline :
-1. L'usuari escull un producte.
+1. L'usuari afegeix un producte a la cistella
 
-2. L'usuari indica la quantitat d'aquest producte.
+2. Si el producte no existeix:
 
-3. La comanda s'afegeix a la cistella.
+    2.1 Mostrar missatge d'error: "Producte no existeix".
 
-4. **Include CU** Recomanar productes
+    2.2 Eliminar producte de la cistella.
 
-5. Si es vol demanar més productes:
+    2.3 Tornar a **1**.
+
+3. Afegir banner de publicitat
+
+4. Si es vol demanar més productes:
     
-    5.1 Tornar a **1**.
+    3.1 Tornar a **1**.
 
-6. Mostrar missatge de comanda sol·licitada correctament.
+5. Mostrar missatge de comanda sol·licitada correctament.
 
 #### Alternative Paths:
 
@@ -42,6 +46,9 @@ Client
 
 <u>El client no ha sel·leccionat cap producte</u>
 Mostrar missatge d'error: "No s'ha sel·leccionat cap producte".
+
+<u>No hi ha producte en stock</u>
+Mostrar missatge d'error: "El producte sol·licitat no està en stock actualment".
 
 #### Post-conditions
 1. El client ha d'haver escullit algun producte per poder presentar ofertes.
