@@ -1,0 +1,39 @@
+@startuml
+
+|Client|
+start
+
+:Indica que vol ofertes;
+
+|#AntiqueWhite|Botiguer|
+repeat
+  repeat
+    fork
+      :Preguntar quantitat i preu dels productes;
+    fork again
+      :Consultar ofertes;
+    end fork
+  repeat while (botiga pot fer tota la comanda?) is (no)
+  ->si;
+  
+  if (botiga utilitza entrega pròpia?) then (si)
+    |Transportista|
+    repeat
+      :Contactar transporista;
+    repeat while (transportista disponible?) is (no)
+    ->si;
+    |#AntiqueWhite|SysExternGoogleMaps|
+    :Calcular trajecte;
+    |#AntiqueWhite|Botiguer|
+    :Afegir preu del transport a la oferta;
+  endif
+  
+  :Afegir oferta a la llista d'ofertes;
+repeat while (queden botigues per revisar?) is (si)
+->no;
+|Client|
+:Mostrar llista d'ofertes;
+
+stop
+
+@enduml

@@ -1,0 +1,26 @@
+@startuml
+
+|Client|
+start
+repeat
+
+  repeat
+    :Triar producte;
+    |#AntiqueWhite|Botiguer|
+    :Comprovar disponibilitat;
+    |Client|
+  repeat while (producte existeix?) is (no)
+  ->si;
+  
+  :Afegir producte a la cistella;
+  
+  |Proveidor Extern|
+  :Afegir banner de publicitat;
+  
+  |Client|
+repeat while (vol més productes?) is (si)
+->no;
+
+stop
+
+@enduml
