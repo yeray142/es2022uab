@@ -52,7 +52,7 @@ S'identifiquen els actors, quins son els casos d'ús i quines relacions hi ha en
 ## Sprint #2
 
 ### Objectius del lliurament
-Els objectius d'aquest primer lliurament són els següents:
+Els objectius d'aquest segon lliurament són els següents:
 * Actualització del  _Document d'Especificacions_ a la versió 2.
 * Elaboració del _Diagrama de casos d'activitats_.
 * Segona fase de _Seguiment i planificació_ del projecte.
@@ -83,3 +83,36 @@ S'han fet especificacions dels casos d'ús: Solicitud comanda, Presentació ofer
 #### Diagrames d'activitats
 Son diagrames de fluxos d'accions que mostra l'activitat que esdevé al llarg del temps. Una activitat produeix alguna acció que produeix algun canvi en el sistema o retorna un valor.
 S'han generat tres diagrames d'activitats corresponents a les tres especificacions anteriors.
+
+## Sprint #3
+
+### Objectius del lliurament
+Els objectius d'aquest tercer lliurament són els següents:
+* Actualització del  _Document d'Especificacions_ a la versió 3.
+* Elaboració del _Diagrama de classes_ i dels _Diagrames de seqüència_.
+* Tercera fase de _Seguiment i planificació_ del projecte.
+
+### Explicació de l'entrega
+Dintre de cada carpeta podeu trobar la següent informació/fitxers:
+* Readme.md : Document en markdown descriptiu del projecte.
+* /documents/ : Els documents lliurats.
+* /requirements/ : Les fitxes de cadascun dels requisits.
+* /specifications/ : Les fitxes de cadascuna de les especificacions de cas d'ús.
+* /minutes/ : Les actes de diferents reunions.
+* /diagrams/ : Els arxius dels diagrames generats.
+* /others/ : Altres arxius.
+
+### Matrials produits a l'entrega
+
+#### Document d'Especificacions V3
+Aquest document conté tota la següent informació:
+* Informació generada al **Sprint #1** i al **Sprint #2**.
+* Imatges dels Diagrama de classes i Diagrames de seqüència. 
+* Explicació de tots els diagrames i les relacions.
+
+#### Diagrama de classes
+El diagrama de classes descriu els tipus d'objectes d'un sistema i les relacions estàtiques que hi ha entre ells. Una classe és, doncs, una representació abstracta d'una categoria d'objectes. Un objecte seria, doncs, un concepte, abstracció o element amb límits definits, és a dir, una instància d'una classe.
+
+#### Diagrames de seqüència
+Aquests diagrames representen escenaris. Entenent escenari com una forma estructurada d'una història d'usuari o una descripció de la seqüència específica d'accions per il·lustrar el comportament d'un cas d'ús.
+S'han generat tres diagrames de seqüència corresponents a les especificacions del **Sprint #2**.
