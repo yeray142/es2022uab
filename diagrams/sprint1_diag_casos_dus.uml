@@ -39,17 +39,15 @@ SysExternGoogleMaps <-- (Fer seguiment d'enviaments)
 ' ***** Relacions del client:
 Client --> (Sol·licitar comanda)
 Client --> (Presentar ofertes)
-(Presentar ofertes) --> (Oferir botigues pròximes) : <<include>>
 Client --> (Seleccionar comanda i enviar)
-(Seleccionar comanda i enviar) --> (Comprovar màxim comandes) : <<include>>
-Client --> (Pagar comanda)
-(Pagar comanda) --> SysExternPaypal
-(Pagar comanda) --> SysExternEntitatBancaria
+(Seleccionar comanda i enviar) --> SysExternPaypal
+(Seleccionar comanda i enviar) --> SysExternEntitatBancaria
+(Seleccionar comanda i enviar) --> Botiguer
 Client --> (Seleccionar remborsament)
 (Seleccionar remborsament) --> (Avaluar i supervisar abonament) : <<include>>
 Client --> (Rebutjar comanda)
-(Sol·licitar comanda) --> (Recomanar productes) : <<include>>
-(Recomanar productes) --> ProveidorExtern
+(Presentar ofertes) --> SysExternGoogleMaps
+ProveidorExtern --> (Sol·licitar comanda)
 
 
 ' ***** Relacions del botiguer:
@@ -65,5 +63,4 @@ Botiguer --> (Escollir tipus lliurament)
 Botiguer --> (Enviar dades ubicació)
 Transportista --> (Enviar dades ubicació)
 (Enviar dades ubicació) --> SysGPS
-
 @enduml
