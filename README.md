@@ -17,6 +17,7 @@ Aquest repositori conté les pràctiques que es fan a terme a Enginyeria del Sof
 3. [minutes](https://github.com/yeray142/es2022uab/tree/master/minutes)
 4. [diagrams](https://github.com/yeray142/es2022uab/tree/master/diagrams)
 5. [others](https://github.com/yeray142/es2022uab/tree/master/others)
+6. [specifications](https://github.com/yeray142/es2022uab/tree/master/specifications)
 
 ## Sprint #1
 
@@ -47,3 +48,38 @@ Aquest document conté tota la següent informació:
 
 #### Diagrama de casos d'ús
 S'identifiquen els actors, quins son els casos d'ús i quines relacions hi ha entre els actors i els casos d'ús.
+
+## Sprint #2
+
+### Objectius del lliurament
+Els objectius d'aquest primer lliurament són els següents:
+* Actualització del  _Document d'Especificacions_ a la versió 2.
+* Elaboració del _Diagrama de casos d'activitats_.
+* Segona fase de _Seguiment i planificació_ del projecte.
+
+### Explicació de l'entrega
+Dintre de cada carpeta podeu trobar la següent informació/fitxers:
+* Readme.md : Document en markdown descriptiu del projecte.
+* /documents/ : Els documents lliurats.
+* /requirements/ : Les fitxes de cadascun dels requisits.
+* /specifications/ : Les fitxes de cadascuna de les especificacions de cas d'ús.
+* /minutes/ : Les actes de diferents reunions.
+* /diagrams/ : Els arxius dels diagrames generats.
+* /others/ : Altres arxius.
+
+### Matrials produits a l'entrega
+
+#### Document d'Especificacions V2
+Aquest document conté tota la següent informació:
+* Informació generada al **Sprint #1**.
+* Descripció de cadascuna de les especificacions de cas d’ús, més un enllaç al fitxer com a nota a peu de pàgina.
+* Imatges dels diagrames d’activitats per cadascuna de les especificacions de cas d’ús, més un enllaç al fitxer (com a nota a peu de pàgina).
+* Explicació de tots els diagrames i les relacions.
+
+#### Especificacions de cas d'ús
+Les especificacions de cas d'ús son uns arxius que indiquen amb més detall quins son els actors, pre-condicions i post-condicions així com el flux principal i subfluxos del sistema.
+S'han fet especificacions dels casos d'ús: Solicitud comanda, Presentació ofertes, Selecció comanda.
+
+#### Diagrames d'activitats
+Son diagrames de fluxos d'accions que mostra l'activitat que esdevé al llarg del temps. Una activitat produeix alguna acció que produeix algun canvi en el sistema o retorna un valor.
+S'han generat tres diagrames d'activitats corresponents a les tres especificacions anteriors.
