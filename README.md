@@ -36,7 +36,7 @@ Dintre de cada carpeta podeu trobar la següent informació/fitxers:
 * /diagrams/ : Els arxius dels diagrames generats.
 * /others/ : Altres arxius.
 
-### Matrials produits a l'entrega
+### Materials produits a l'entrega
 
 #### Document d'Especificacions
 Aquest document conté tota la següent informació:
@@ -67,7 +67,7 @@ Dintre de cada carpeta podeu trobar la següent informació/fitxers:
 * /diagrams/ : Els arxius dels diagrames generats.
 * /others/ : Altres arxius.
 
-### Matrials produits a l'entrega
+### Materials produits a l'entrega
 
 #### Document d'Especificacions V2
 Aquest document conté tota la següent informació:
@@ -102,7 +102,7 @@ Dintre de cada carpeta podeu trobar la següent informació/fitxers:
 * /diagrams/ : Els arxius dels diagrames generats.
 * /others/ : Altres arxius.
 
-### Matrials produits a l'entrega
+### Materials produits a l'entrega
 
 #### Document d'Especificacions V3
 Aquest document conté tota la següent informació:
