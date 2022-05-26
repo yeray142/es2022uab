@@ -24,7 +24,7 @@ class TestCerca:
         mock_proveidor_extern = MagicMock()
         manager(mock_proveidor_extern).cerca_producte(product_list, mock_proveidor_extern)
 
-        calls = [call(list[0]), call(list[1]), call(list[2]), call(list[3])]
+        calls = [call(product_list[0]), call(product_list[1]), call(product_list[2]), call(product_list[3])]
         mock_proveidor_extern.has_associated_ad.assert_has_calls(calls, any_order=False)
 
     # Test 2

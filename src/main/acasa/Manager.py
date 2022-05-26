@@ -7,4 +7,6 @@ class Manager:
         self.__external_provider = external_provider
 
     def cerca_producte(self, product_list: list, proveidor_extern: ExternalProviderService) -> (list, list):
+        for i, v in enumerate(product_list):
+            proveidor_extern.has_associated_ad(v)
         return True
