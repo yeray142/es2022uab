@@ -14,6 +14,9 @@ class Manager:
         available_products = self.__product_bd.product_query()
 
         for i, v in enumerate(product_list):
-            disponibility.append(False)
+            if v in available_products:
+                disponibility.append(True)
+            else:
+                disponibility.append(False)
             ads.append(self.__external_provider.has_associated_ad(v))
         return disponibility, ads
