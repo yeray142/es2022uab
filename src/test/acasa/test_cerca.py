@@ -41,7 +41,7 @@ class TestCerca:
         assert all(type(i) is bool for i in ads)  # Check the ads list type.
 
     # Test 3
-    def test_3(self, manager) -> None:
+    def test_ad_is_true_when_it_has_to_be_true(self, manager) -> None:
         product_list = ["product_1", "product_2", "product_3", "product_4", "product_5", "producte_6", "product_7"]
         mock_proveidor_extern = MagicMock()
         fake_bd = MagicMock()
@@ -52,7 +52,7 @@ class TestCerca:
         assert ads == expected_ads
 
     # Test 4
-    def test_4(self, manager) -> None:
+    def test_fake_bd_query_is_called_once(self, manager) -> None:
         product_list = ["product_1"]
         mock_proveidor_extern = MagicMock()
         fake_bd = MagicMock()
