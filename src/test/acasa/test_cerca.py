@@ -29,7 +29,14 @@ class TestCerca:
 
     # Test 2
     def test_returned_values_must_be_two_lists(self, manager) -> None:
-        pass
+        product_list = ["product_1", "product_2", "product_3", "product_4", "product_5"]
+        mock_proveidor_extern = MagicMock()
+        mock_proveidor_extern.has_associated_ad = MagicMock(return_value=False)  # Sets the mock to return always False.
+        disponibility, ads = manager(mock_proveidor_extern).cerca_producte(product_list, mock_proveidor_extern)
+
+        assert (len(disponibility) == len(product_list), len(ads) == len(product_list))  # Check the lengths
+        assert all(type(i) is bool for i in disponibility)  # Check the disponibility list type.
+        assert all(type(i) is bool for i in ads)  # Check the ads list type.
 
     # Test 3
     def test_3(self) -> None:
