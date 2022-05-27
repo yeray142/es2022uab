@@ -11,7 +11,7 @@ class Manager:
     def cerca_producte(self, product_list: list) -> (list, list):
         disponibility = []
         ads = []
-        self.__product_bd.product_query()
+        available_products = self.__product_bd.product_query()
 
         for i, v in enumerate(product_list):
             disponibility.append(False)
