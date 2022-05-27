@@ -7,8 +7,9 @@ class Manager:
         self.__external_provider = external_provider
 
     def cerca_producte(self, product_list: list, proveidor_extern: ExternalProviderService) -> (list, list):
-        disponibility = [False] * len(product_list)
-        ads = [False] * len(product_list)
+        disponibility = []
+        ads = []
         for i, v in enumerate(product_list):
-            proveidor_extern.has_associated_ad(v)
+            disponibility.append(False)
+            ads.append(proveidor_extern.has_associated_ad(v))
         return disponibility, ads
