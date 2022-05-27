@@ -39,8 +39,14 @@ class TestCerca:
         assert all(type(i) is bool for i in ads)  # Check the ads list type.
 
     # Test 3
-    def test_3(self) -> None:
-        pass
+    def test_3(self, manager) -> None:
+        product_list = ["product_1", "product_2", "product_3", "product_4", "product_5", "producte_6", "product_7"]
+        mock_proveidor_extern = MagicMock()
+        expected_ads = [False, False, True, True, False, True, False]
+
+        mock_proveidor_extern.has_associated_ad = MagicMock(side_effect=expected_ads)
+        disponibility, ads = manager(mock_proveidor_extern).cerca_producte(product_list, mock_proveidor_extern)
+        assert ads == expected_ads
 
     # Test 4
     def test_4(self) -> None:
