@@ -28,7 +28,7 @@ class TestCerca:
         mock_proveidor_extern.has_associated_ad.assert_has_calls(calls, any_order=False)
 
     # Test 2
-    def test_2(self) -> None:
+    def test_returned_values_must_be_two_lists(self, manager) -> None:
         pass
 
     # Test 3
