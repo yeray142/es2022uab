@@ -44,7 +44,7 @@ class TestCerca:
         mock_proveidor_extern = MagicMock()
         expected_ads = [False, False, True, True, False, True, False]
 
-        mock_proveidor_extern.has_associated_ad = MagicMock(side_effect=expected_ads)
+        mock_proveidor_extern.has_associated_ad = MagicMock(side_effect=expected_ads)  # Returns different values on each call.
         disponibility, ads = manager(mock_proveidor_extern).cerca_producte(product_list, mock_proveidor_extern)
         assert ads == expected_ads
 
