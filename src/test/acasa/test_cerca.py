@@ -61,5 +61,13 @@ class TestCerca:
         fake_bd.product_query.assert_called_once()
 
     # Test 5
-    def test_5(self) -> None:
-        pass
+    def test_disponibility_is_true_when_it_is_true_in_the_fake_bd(self, manager) -> None:
+        product_list = ["product_1", "product_2", "product_3", "product_4", "product_5", "producte_6", "product_7"]
+        mock_proveidor_extern = MagicMock()
+        fake_bd = MagicMock()
+
+        expected_products = ["product_1", "product_4", "product_8"]
+        fake_bd.product_query = MagicMock(return_value=expected_products)  # Returns all the entire list.
+
+        disponibility, ads = manager(mock_proveidor_extern, fake_bd).cerca_producte(product_list)
+        assert disponibility == [True, False, False, True, False, False, False]
