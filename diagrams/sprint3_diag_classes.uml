@@ -1,5 +1,4 @@
 @startuml
-
 class PerfUsuari {
 id_usuari
 nom
@@ -140,4 +139,33 @@ Pagament "1..*"--"0..1" TarjetaCredit
 PerfClient "1..1"--"1..*" TarjetaCredit
 ComandaFerma "1..1"--"1..1" Pagament
 
+class Interficie {
+DemanarOfertes()
+calcularTrajecte()
+mostrarLlistaOfertes()
+pagarOferta(oferta, met_pagament)
+redireccionar()
+avisarComanda()
+mostrarMissatgeComandaFeta()
+afegirProducte(p)
+mostrarError()
+afegirBannerPublicitat(banner)
+mostrarMissatgeComandaSolicitada()
+}
+
+class Control {
+PreguntarStock()
+ConsultarOfertes()
+crearOfertes(preu, descomptes)
+consultarDisponibilitat()
+calcularTrajecte()
+afegirPreuTransport(preu)
+redirreccionar(r)
+generarComanda(oferta)
+avisarBotiguer()
+canviaDisponibilitat(hora, dia)
+mostrarMissatgeComandaFeta()
+comprovaDisponibilitat(p)
+afegirProducte(p)
+}
 @enduml
