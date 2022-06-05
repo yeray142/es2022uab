@@ -47,7 +47,9 @@ Client --> (Seleccionar remborsament)
 (Seleccionar remborsament) --> (Avaluar i supervisar abonament) : <<include>>
 Client --> (Rebutjar comanda)
 (Presentar ofertes) --> SysExternGoogleMaps
-ProveidorExtern --> (Sol·licitar comanda)
+(Presentar ofertes) --> Botiguer
+(Sol·licitar comanda) --> ProveidorExtern 
+(Sol·licitar comanda) --> Botiguer
 
 
 ' ***** Relacions del botiguer:
