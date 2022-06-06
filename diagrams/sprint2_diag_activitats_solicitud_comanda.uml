@@ -11,6 +11,7 @@ repeat
     |Client|
   repeat while (producte existeix?) is (no)
   ->si;
+floating note right: NOTA: Si el producte no existeix, \nes mostra missatge d'error \ni s'elimina de la cistella
   
   :Afegir producte a la cistella;
   

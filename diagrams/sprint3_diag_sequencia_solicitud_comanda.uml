@@ -3,10 +3,11 @@
 ' ***** Els objectes poden ser comunicació (boundary), control o entity
 actor Client
 actor ProveidorExtern
+actor Botiguer
 boundary ClasseInterf
 control ClasseControl
 entity PerfBotiguer
-entity PerfProveidorExtern
+entity ProducteTriat
 entity Cistella
 
 loop client vol afegir productes
@@ -14,7 +15,11 @@ loop client vol afegir productes
     Client -> ClasseInterf : afegirProducte(p)
     ClasseInterf -> ClasseControl : afegirProducte(p)
     ClasseControl -> PerfBotiguer : comprovaDisponibilitat(p)
+    PerfBotiguer -> ClasseControl : comprovaDisponibilitat(p)
+    ClasseControl -> ClasseInterf : comprovaDisponibilitat(p)
+    ClasseInterf -> Botiguer : comprovaDisponibilitat(p)
     alt producte existeix
+      ClasseControl -> ProducteTriat : crearProducte(p)
       ClasseControl -> Cistella : afegirProducte(p)
     else producte no existeix
       ClasseInterf -> Client : mostrarError()

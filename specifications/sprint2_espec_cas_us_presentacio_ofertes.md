@@ -4,7 +4,7 @@
 Presentar ofertes
 
 #### Version
-1.0.1
+1.0.2
 
 #### Date
 18/05/2022
@@ -20,35 +20,37 @@ Client, Botiguer, Transportista, SysExternGoogleMaps
 2. L'usuari ha d'haver sol·licitat alguna comanda.
 
 #### Main Pipeline :
-1. Preguntar a les botigues la quantitat i preu dels productes.
+1. L'usuari indica que vol rebre ofertes.
 
-2. Consultar les ofertes de les botigues.
+2. Preguntar a les botigues la quantitat i preu dels productes.
 
-3. Si la botiga no pot fer tota la comanda:
+3. Consultar les ofertes de les botigues.
 
-    3.1 Tornar a **1**.
+4. Si la botiga no pot fer tota la comanda:
 
-4. Si la botiga utilitza l'entrega pròpia:
+    4.1 Tornar a **1**.
 
-    4.1 Contactar amb un transportista.
+5. Si la botiga utilitza l'entrega pròpia:
 
-    4.2 Calcular trajecte amb l'API de Google Maps.
+    5.1 Contactar amb un transportista.
 
-    4.3 Afegir preu del transport a la oferta final.
+    5.2 Calcular trajecte amb l'API de Google Maps.
 
-5. Afegir oferta a la llista d'ofertes.
+    5.3 Afegir preu del transport a la oferta final.
 
-6. Si queden més botigues per revisar:
+6. Afegir oferta a la llista d'ofertes.
 
-    6.1 Tornar a **1**.
+7. Si queden més botigues per revisar:
 
-7. Mostrar llista d'ofertes al client.
+    7.1 Tornar a **1**.
+
+8. Mostrar llista d'ofertes al client.
 
 #### Alternative Paths:
 
-4.2 Si el transportista no està disponible:
+5.2 Si el transportista no està disponible:
 
-    4.2.1 Tornar a **4**.
+    5.2.1 Tornar a **5**.
 
 ---
 #### Exception Paths:

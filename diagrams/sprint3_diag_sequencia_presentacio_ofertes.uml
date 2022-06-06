@@ -7,9 +7,11 @@ control ClasseControl
 entity PerfBotiguer
 entity PerfTransportista
 entity Oferta
+entity Cistella
 
 Client -> ClasseInterf : DemanarOfertes()
 ClasseInterf -> ClasseControl : DemanarOfertes()
+ClasseControl -> Cistella : consultarProductesTriats()
 loop queden botigues per revisar
 loop no hi ha botiga
    ClasseControl -> PerfBotiguer : PreguntarStock()

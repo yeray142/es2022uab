@@ -8,6 +8,8 @@ boundary ClasseInterf
 control ClasseControl
 entity ComandaFerma
 entity PerfTransportista
+entity Pagament
+entity TarjetaCredit
 
 Client -> ClasseInterf : triaOferta(o)
 Client -> ClasseInterf : triaMetodePagament(mp)
@@ -17,9 +19,12 @@ ClasseInterf -> ClasseControl : pagarOferta(o, mp)
 alt mp == Paypal
    ClasseControl -> ClasseInterf : redireccionar(Paypal)
    ClasseInterf -> SysExternPaypal : redireccionar()
+   ClasseControl -> Pagament : desarDadesPagament()
 else mp == Tarjeta bancària
+   ClasseControl -> TarjetaCredit : consultaDadesTarjeta()
    ClasseControl -> ClasseInterf : redireccionar(entitatBancaria)
    ClasseInterf -> SysExternEntitatBancaria : redireccionar()
+   ClasseControl -> Pagament : desarDadesPagament()
 end
 
 ClasseControl -> ComandaFerma : generarComanda(o)
