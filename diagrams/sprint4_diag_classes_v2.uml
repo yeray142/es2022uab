@@ -1,0 +1,170 @@
+@startuml
+class PerfUsuari {
+id_usuari
+nom
+email
+numero_telèfon
+contrasenya
+actualitzarDades()
+getEmail()
+getNTelefon()
+getNom()
+}
+
+class PerfClient {
+id_client
+n_comandes
+actualitzarInfo()
+getNComandes()
+getAdreça()
+}
+
+class PerfBotiguer {
+id_botiguer
+ubicació_botiga
+PreguntarStock()
+ConsultarOfertes()
+comprovaDisponibilitat(p)
+}
+
+class PerfTransportista {
+id_transportista
+permisos
+proves_aptitud
+consultarDisponibilitat()
+canviaDisponibilitat(hora, dia)
+}
+
+class Adreça {
+id_adreça
+carrer
+ciutat
+provincia
+pais
+codi_postal
+}
+
+PerfUsuari "1..1"--"1..1" Adreça
+
+PerfUsuari <|-- PerfClient
+PerfUsuari <|-- PerfBotiguer
+PerfUsuari <|-- PerfTransportista
+
+class Oferta {
+id_botiguer
+descomptes
+preu_oferta
+crearOferta(preu, descomptes)
+afegirPreuTransport(preu)
+}
+
+class ComandaFerma {
+id_comanda
+id_botiga
+id_Client
+id_Transportista
+preu_total
+data_creació
+id_pagament
+generarComanda(o)
+}
+
+ComandaFerma "1..1"--"1..1" PerfClient
+ComandaFerma "1..*"--"1..1" PerfBotiguer
+ComandaFerma "1..*"--"1..1" PerfTransportista
+
+class Cistella {
+id_cistella
+id_client
+afegirProducte(p)
+consultarProductesTriats()
+}
+
+Cistella "1..1"--"1..1" PerfClient
+
+class ProducteTriat {
+id_producte
+quantitat
+crearProducte(p)
+}
+
+class Producte {
+id_producte
+nom
+descripció
+unitat
+preu_unitat
+quantitat_stock
+te_publicitat_associada
+consultaPublicitat()
+}
+
+ProducteTriat <|-- Producte
+
+Cistella "1..1"*--"1..*" ProducteTriat
+Oferta "1..*"--"1..1" Cistella
+ComandaFerma "1..1"*-left-"1..*" ProducteTriat
+
+class CatàlegProductes{
+id_botiga
+}
+
+CatàlegProductes "1..1"--"1..1" PerfBotiguer
+CatàlegProductes "1..1"*--"1..*" Producte
+Oferta "1..*"-left-"1..1" PerfBotiguer
+
+class Entrega{
+id_trajecte
+origen
+destí
+cost
+data_entrega
+tipus_entrega
+actualitzarDades()
+getCost()
+}
+
+Entrega "1..1"--"1..1" ComandaFerma
+Entrega "1..1"--"1..1" Oferta
+
+class Pagament {
+id_pagament
+mètode_pagament
+id_comanda
+desarDadesPagament()
+}
+
+class TarjetaCredit {
+id_tarjeta
+id_client
+nom_tarjeta
+num_terjeta
+data_expiració
+consultaDadesTarjeta()
+}
+
+Pagament "1..*"--"0..1" TarjetaCredit
+PerfClient "1..1"--"1..*" TarjetaCredit
+ComandaFerma "1..1"--"1..1" Pagament
+
+class Interficie {
+DemanarOfertes()
+calcularTrajecte()
+triaOferta(o)
+triaMetodePagament(mp)
+redireccionar(d)
+avisarBotiguer()
+mostrarMissatgeComandaFeta()
+afegirProducte(p)
+comprovaDisponibilitat(p)
+afegirBannerPublicitat(b)
+afegirPublicitat(p)
+}
+
+class Control {
+DemanarOfertes()
+pagarOferta(o, mp)
+afegirProducte(p)
+comprovaDisponibilitat(p)
+}
+@enduml
