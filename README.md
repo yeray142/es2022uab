@@ -18,6 +18,7 @@ Aquest repositori conté les pràctiques que es fan a terme a Enginyeria del Sof
 4. [diagrams](https://github.com/yeray142/es2022uab/tree/master/diagrams)
 5. [others](https://github.com/yeray142/es2022uab/tree/master/others)
 6. [specifications](https://github.com/yeray142/es2022uab/tree/master/specifications)
+7. [src](https://github.com/yeray142/es2022uab/tree/master/src)
 
 ## Sprint #1
 
@@ -116,3 +117,35 @@ El diagrama de classes descriu els tipus d'objectes d'un sistema i les relacions
 #### Diagrames de seqüència
 Aquests diagrames representen escenaris. Entenent escenari com una forma estructurada d'una història d'usuari o una descripció de la seqüència específica d'accions per il·lustrar el comportament d'un cas d'ús.
 S'han generat tres diagrames de seqüència corresponents a les especificacions del **Sprint #2**.
+
+## Sprint #4
+
+### Objectius del lliurament
+Els objectius d'aquest tercer lliurament són els següents:
+* Utilitzar _Metodologia TDD_ per obtenir el disseny detallat associat a un cas d'ús concret.
+* Actualització del _Diagrama de classes_ i dels _Diagrames de seqüència_ amb el disseny obtingut de l'execució de la metodologia TDD.
+* Quarta fase de _Seguiment i planificació_ del projecte.
+* Lliurament final del projecte.
+
+### Explicació de l'entrega
+Dintre de cada carpeta podeu trobar la següent informació/fitxers:
+* Readme.md : Document en markdown descriptiu del projecte.
+* /src/ : Els arxius de codi generat.
+* /documents/ : Els documents lliurats i el fitxer ZIP amb el codi.
+* /requirements/ : Les fitxes de cadascun dels requisits.
+* /specifications/ : Les fitxes de cadascuna de les especificacions de cas d'ús.
+* /minutes/ : Les actes de diferents reunions.
+* /diagrams/ : Els arxius dels diagrames generats.
+* /others/ : Altres arxius.
+
+### Materials produits a l'entrega
+
+#### Document d'Especificacions V4
+Aquest document conté tota la següent informació:
+* Informació generada al **Sprint #1**, al **Sprint #2** i al **Sprint #3**.
+* Explicació de com s'ha realitzat el procés TDD.
+* Justificació de les classes obtingudes.
+* La versió 2 del diagrama de classes i la versió 2 del diagrama de seqüència del cas d'ús "Sol·licitud de Comanda".
+
+#### Fitxer ZIP amb el codi
+Un fitxer amb tot el codi Python (de producció i de test) necessaris per completar el conjunt de tests. 
