@@ -22,12 +22,17 @@ getAdreça()
 class PerfBotiguer {
 id_botiguer
 ubicació_botiga
+PreguntarStock()
+ConsultarOfertes()
+comprovaDisponibilitat(p)
 }
 
 class PerfTransportista {
 id_transportista
 permisos
 proves_aptitud
+consultarDisponibilitat()
+canviaDisponibilitat(hora, dia)
 }
 
 class Adreça {
@@ -49,6 +54,8 @@ class Oferta {
 id_botiguer
 descomptes
 preu_oferta
+crearOferta(preu, descomptes)
+afegirPreuTransport(preu)
 }
 
 class ComandaFerma {
@@ -59,9 +66,7 @@ id_Transportista
 preu_total
 data_creació
 id_pagament
-getPreu()
-getData()
-cancelarComanda()
+generarComanda(o)
 }
 
 ComandaFerma "1..1"--"1..1" PerfClient
@@ -71,8 +76,8 @@ ComandaFerma "1..*"--"1..1" PerfTransportista
 class Cistella {
 id_cistella
 id_client
-afegirProducte()
-eliminarProducte()
+afegirProducte(p)
+consultarProductesTriats()
 }
 
 Cistella "1..1"--"1..1" PerfClient
@@ -80,6 +85,7 @@ Cistella "1..1"--"1..1" PerfClient
 class ProducteTriat {
 id_producte
 quantitat
+crearProducte(p)
 }
 
 class Producte {
@@ -125,6 +131,7 @@ class Pagament {
 id_pagament
 mètode_pagament
 id_comanda
+desarDadesPagament()
 }
 
 class TarjetaCredit {
@@ -133,6 +140,7 @@ id_client
 nom_tarjeta
 num_terjeta
 data_expiració
+consultaDadesTarjeta()
 }
 
 Pagament "1..*"--"0..1" TarjetaCredit
@@ -142,30 +150,21 @@ ComandaFerma "1..1"--"1..1" Pagament
 class Interficie {
 DemanarOfertes()
 calcularTrajecte()
-mostrarLlistaOfertes()
-pagarOferta(oferta, met_pagament)
-redireccionar()
-avisarComanda()
+triaOferta(o)
+triaMetodePagament(mp)
+redireccionar(d)
+avisarBotiguer()
 mostrarMissatgeComandaFeta()
 afegirProducte(p)
-mostrarError()
-afegirBannerPublicitat(banner)
-mostrarMissatgeComandaSolicitada()
+comprovaDisponibilitat(p)
+afegirBannerPublicitat(b)
 }
 
 class Control {
-PreguntarStock()
-ConsultarOfertes()
-crearOfertes(preu, descomptes)
-consultarDisponibilitat()
-calcularTrajecte()
-afegirPreuTransport(preu)
-redirreccionar(r)
-generarComanda(oferta)
-avisarBotiguer()
-canviaDisponibilitat(hora, dia)
-mostrarMissatgeComandaFeta()
-comprovaDisponibilitat(p)
+DemanarOfertes()
+pagarOferta(o, mp)
 afegirProducte(p)
+comprovaDisponibilitat(p)
 }
+
 @enduml
